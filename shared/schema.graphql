@@ -1,0 +1,28 @@
+schema {
+  query: RootQueryType
+}
+
+type CategoryType implements Node {
+  """The ID of an object"""
+  id: ID!
+  name: String
+}
+
+type ItemType implements Node {
+  """The ID of an object"""
+  id: ID!
+  name: String
+  description: String
+  dateCreated: String
+  categories: [CategoryType]
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+type RootQueryType {
+  items: [ItemType]
+}

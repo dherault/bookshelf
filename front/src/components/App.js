@@ -4,15 +4,13 @@ import './App.css';
 class App extends Component {
 
   state = {
-    modalOpened: false,
-  };
-
+    foo: 'bar',
+  }
   render() {
-    const { modalOpened } = this.state;
-
     return (
       <div className="App">
         hello world
+        <pre>{JSON.stringify(this.props.items, null, 2)}</pre>
       </div>
     );
   }

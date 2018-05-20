@@ -3,17 +3,6 @@ import { graphql, QueryRenderer } from 'react-relay';
 import relayEnvironment from './relayEnvironment';
 import App from './components/App';
 
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO
-// TODO torrc
 const AppWrapper = () => (
   <QueryRenderer
     environment={relayEnvironment}

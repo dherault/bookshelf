@@ -22,11 +22,11 @@ class App extends Component {
     this.state = {
       searchString: '',
       selectedLanguages: [],
-    }
+    };
   }
 
   componentWillMount() {
-    fetch('http://localhost:3001/books', { method: 'GET' })
+    fetch('/books', { method: 'GET' })
     .then(response => response.json())
     .then(books => this.setState({ books }));
   }
@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   handleDownloadClick = fileName => {
-    this.frameRef.current.src = `http://localhost:3001/download/${fileName}`;
+    this.frameRef.current.src = `/download/${fileName}`;
     // fetch(`http://localhost:3001/download/${fileName}`, { method: 'GET' });
   }
 

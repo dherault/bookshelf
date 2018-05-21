@@ -1,3 +1,3 @@
-# React + Relay boilerplate
+# Bookshelf
 
-Using create-react-app.
+A minimalist bookself app.

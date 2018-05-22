@@ -21,6 +21,7 @@ class App extends Component {
     super();
 
     this.frameRef = React.createRef();
+
     this.state = {
       searchString: '',
       selectedLanguages: [],
@@ -39,17 +40,10 @@ class App extends Component {
 
   handleDownloadClick = fileName => {
     this.frameRef.current.src = apiUrl + `/download/${fileName}`;
-    // fetch(`http://localhost:3001/download/${fileName}`, { method: 'GET' });
   }
 
   handleLanguageChange = language => {
     const { selectedLanguages } = this.state;
-
-    // if (selectedLanguages.length === languages.length) {
-    //   return this.setState({
-    //     selectedLanguages: [language],
-    //   });
-    // }
 
     const nextSelectedLanguages = selectedLanguages.slice();
 
@@ -110,16 +104,16 @@ class App extends Component {
         </div>
         <div className="books">
           {filteredBooks.map(book => (
-            <div className="book" key={book.id}>
-              <div className="title" onClick={() => this.handleDownloadClick(book.fileName)}>{book.title}</div>
+            <div className="book" key={book.id} onClick={() => this.handleDownloadClick(book.fileName)}>
+              <div className="title">{book.title}</div>
               <div className="book-meta">
                 <span className="author">{book.author}</span>
                 <span className="book-language">{book.language}</span>
               </div>
             </div>
           ))}
-          <iframe ref={this.frameRef} style={{ display: 'none' }} />
         </div>
+        <iframe ref={this.frameRef} style={{ display: 'none' }} />
       </div>
     );
   }

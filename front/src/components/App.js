@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Fuse from 'fuse.js';
 import './App.css';
 
-const languages = ['English', 'French', 'Spanish', 'Chinese', 'Hindi'];
+const languages = ['English', 'French', 'Spanish', 'Chinese', 'Japanese'];
 const options = {
   shouldSort: true,
   threshold: 0.6,
@@ -114,7 +114,7 @@ class App extends Component {
               <div className="title" onClick={() => this.handleDownloadClick(book.fileName)}>{book.title}</div>
               <div className="book-meta">
                 <span className="author">{book.author}</span>
-                <span className="language">{book.language}</span>
+                <span className="book-language">{book.language}</span>
               </div>
             </div>
           ))}

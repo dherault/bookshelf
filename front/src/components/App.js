@@ -39,7 +39,9 @@ class App extends Component {
   }
 
   handleDownloadClick = fileName => {
-    this.frameRef.current.src = apiUrl + `/download/${fileName}`;
+    fetch(apiUrl + `/download/${fileName}`, { method: 'GET' })
+    .then(response => response.blob())
+    .then(blob => window.download(blob, fileName));
   }
 
   handleLanguageChange = language => {
@@ -113,7 +115,6 @@ class App extends Component {
             </div>
           ))}
         </div>
-        <iframe ref={this.frameRef} style={{ display: 'none' }} />
       </div>
     );
   }

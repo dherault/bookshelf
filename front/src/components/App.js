@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Fuse from 'fuse.js';
 import './App.css';
 
-const languages = ['English', 'French', 'Spanish', 'Chinese', 'Japanese'];
+const languages = ['English', 'French', 'Spanish', 'Russian', 'Chinese'];
 const options = {
   shouldSort: true,
   threshold: 0.6,
